@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jarvis privacy policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.7rem; margin-bottom: 0.25rem; }
+  .lead { margin-top: 0; opacity: 0.8; }
+</style>
+</head>
+<body>
+<h1>Jarvis privacy policy</h1>
+<p class="lead">Last updated 29 October 2026. <a href="index.html">Back to the Jarvis home page</a>.</p>
+
+<h2>Who this covers</h2>
+<p>Jarvis is a personal assistant used by one person, its author, with the author's own Google account. It is not offered to anyone else. Mail in the author's inbox is written by other people; Jarvis handles it only as described below.</p>
+
+<h2>What Jarvis accesses</h2>
+<p>Read-only access to the author's Gmail (<code>gmail.readonly</code>) and Google Calendar (<code>calendar.readonly</code>), granted by the author on Google's consent screen. Jarvis cannot send, delete or change mail or calendar events.</p>
+
+<h2>How it is used</h2>
+<p>To write a short summary, a category and a priority for each new message, to alert the author when a message needs attention, and to answer the author's own questions about their mail and calendar. It is not used for advertising, profiling or any other purpose.</p>
+
+<h2>Where the data goes</h2>
+<ul>
+  <li><strong>Anthropic's API.</strong> The text of a new message (up to roughly 6,000 tokens, with attachment names but not attachment contents) and the calendar events the author asks about are sent to Anthropic's API, which runs the Claude model that writes the summary or the answer.</li>
+  <li><strong>Telegram.</strong> Summaries and answers are sent to the author in a private chat with the author's own Telegram bot.</li>
+  <li><strong>The author's computer.</strong> Jarvis stores a summary row for each message (sender, subject, category, priority, short summary, requested actions, deadlines) in a database on the author's own computer. It does not store message bodies. The Google sign-in token is kept in a file on that computer that only the author's user account can read.</li>
+</ul>
+<p>Nothing is sold. Nobody other than the author reads the data. Jarvis does not use it to train AI models.</p>
+
+<h2>Limited use</h2>
+<p>Jarvis's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h2>Keeping and deleting data</h2>
+<p>Summaries stay on the author's computer until the author deletes them. The author can withdraw Jarvis's access to Google at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, after which Jarvis can read nothing from Gmail or Calendar, and can delete the stored summaries and the token file.</p>
+
+<h2>Changes</h2>
+<p>If what Jarvis does with Google data changes, this page is updated first and the date above changes.</p>
+
+<h2>Contact</h2>
+<p><a href="https://github.com/devlaza95">github.com/devlaza95</a></p>
+</body>
+</html>
