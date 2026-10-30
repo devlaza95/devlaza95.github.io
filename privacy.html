@@ -13,30 +13,32 @@
 </head>
 <body>
 <h1>Jarvis privacy policy</h1>
-<p class="lead">Last updated 29 October 2026. <a href="index.html">Back to the Jarvis home page</a>.</p>
+<p class="lead">Last updated 30 October 2026. <a href="index.html">Back to the Jarvis home page</a>.</p>
 
 <h2>Who this covers</h2>
 <p>Jarvis is a personal assistant used by one person, its author, with the author's own Google account. It is not offered to anyone else. Mail in the author's inbox is written by other people; Jarvis handles it only as described below.</p>
 
 <h2>What Jarvis accesses</h2>
-<p>Read-only access to the author's Gmail (<code>gmail.readonly</code>) and Google Calendar (<code>calendar.readonly</code>), granted by the author on Google's consent screen. Jarvis cannot send, delete or change mail or calendar events.</p>
+<p>Access to the author's Gmail (<code>gmail.readonly</code> and <code>gmail.compose</code>) and read-only access to Google Calendar (<code>calendar.readonly</code>), granted by the author on Google's consent screen.</p>
+<p>Jarvis uses the Gmail access to read mail, to write drafts in the author's own mailbox, and to send a draft, but only after the author has approved that exact message in Telegram, each time. Google's <code>gmail.compose</code> scope allows sending mail as the author; Jarvis uses that for nothing but a draft the author has approved. Jarvis does not label, archive, trash or delete mail, and it cannot change calendar events.</p>
 
 <h2>How it is used</h2>
-<p>To write a short summary, a category and a priority for each new message, to alert the author when a message needs attention, and to answer the author's own questions about their mail and calendar. It is not used for advertising, profiling or any other purpose.</p>
+<p>To write a short summary, a category and a priority for each new message, to alert the author when a message needs attention, to answer the author's own questions about their mail and calendar, and to write draft replies and new drafts when the author asks for them. The author reads a draft, with its recipients and subject, before anything is sent. It is not used for advertising, profiling or any other purpose.</p>
 
 <h2>Where the data goes</h2>
 <ul>
-  <li><strong>Anthropic's API.</strong> The text of a new message (up to roughly 6,000 tokens, with attachment names but not attachment contents) and the calendar events the author asks about are sent to Anthropic's API, which runs the Claude model that writes the summary or the answer.</li>
-  <li><strong>Telegram.</strong> Summaries and answers are sent to the author in a private chat with the author's own Telegram bot.</li>
-  <li><strong>The author's computer.</strong> Jarvis stores a summary row for each message (sender, subject, category, priority, short summary, requested actions, deadlines) in a database on the author's own computer. It does not store message bodies. The Google sign-in token is kept in a file on that computer that only the author's user account can read.</li>
+  <li><strong>Anthropic's API.</strong> The text of a new message (up to roughly 6,000 tokens, with attachment names but not attachment contents) and the calendar events the author asks about are sent to Anthropic's API, which runs the Claude model that writes the summary, the answer or the draft. A draft is written from the author's instructions and the summary of the message it answers, not from the whole message.</li>
+  <li><strong>Telegram.</strong> Summaries and answers are sent to the author in a private chat with the author's own Telegram bot. So are the recipients, the subject and the text of a draft the author is asked to approve.</li>
+  <li><strong>Gmail.</strong> A draft is created in the author's own mailbox. To address a reply, and to check before the author is asked that the reply goes to the person who wrote, Jarvis reads from Gmail the headers of the message it answers (sender, subject and message id) and the sender and message id of the other messages in its thread, never their text; the headers stay on the author's computer. When the author approves a draft, it is sent from that mailbox to the recipients the author was shown, and to nobody else.</li>
+  <li><strong>The author's computer.</strong> Jarvis stores a summary row for each message (sender, subject, category, priority, short summary, requested actions, deadlines) in a database on the author's own computer. It does not store message bodies. For each draft the author is asked to send, it keeps the recipients, the subject, the text, the sender of the message it answers and the author's answer, in the same database. The Google sign-in token is kept in a file on that computer that only the author's user account can read.</li>
 </ul>
-<p>Nothing is sold. Nobody other than the author reads the data. Jarvis does not use it to train AI models.</p>
+<p>Nothing is sold. Nobody other than the author reads the data; mail goes to someone else only when the author approves it. Jarvis does not use the data to train AI models.</p>
 
 <h2>Limited use</h2>
 <p>Jarvis's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
 <h2>Keeping and deleting data</h2>
-<p>Summaries stay on the author's computer until the author deletes them. The author can withdraw Jarvis's access to Google at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, after which Jarvis can read nothing from Gmail or Calendar, and can delete the stored summaries and the token file.</p>
+<p>Summaries and the records of drafts stay on the author's computer until the author deletes them. Drafts stay in Gmail until the author sends or deletes them. The author can withdraw Jarvis's access to Google at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, after which Jarvis can read nothing from Gmail or Calendar and write no drafts, and can delete the stored summaries, the records and the token file.</p>
 
 <h2>Changes</h2>
 <p>If what Jarvis does with Google data changes, this page is updated first and the date above changes.</p>
